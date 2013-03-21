@@ -1,0 +1,53 @@
+
+#############################################################
+##### Vineeth Harikumar : ee364c06 : IRC client : 2011 ######
+#############################################################
+
+Usage: ./eceIRC.py 
+
+############################
+###### CONNECT WINDOW ######
+############################
+When you first run the program, A Connect window should pop up, type in the server name and your ircNick and click on the 'Connect' button. There is only one connect window per program.
+
+
+############################
+## SERVER COMMAND WINDOW ###
+############################
+Once a successful connection has been made to the irc server specified, the server command window should pop up. It shows the message received from the server on a successful connection with various server details. There is only one server command window per program.
+
+From this window you can join/part/exit any channel or the server itself
+
+	COMMANDS :
+			/join <#channelName> - joins the specified channel and opens up a channel window, if the channel doesnt exist, it makes a new channel
+			/part <#channelName> - parts the specified channel if you're already connected to it and closes that channel window
+			/exit 		     - exits the irc server and closes the program
+
+
+############################
+###### CHANNEL WINDOW ######
+############################
+This window pops up when you join a new channel. From this window you can send and receive channel messages to and from the specified channel. You can also view the list of current users on the irc channel. There can be multiple channel windows per program.  
+
+	COMMANDS: 
+			/join <#channelName> - joins the specified channel and opens up a channel window, if the channel doesnt exist, it makes a new channel
+			/part <#channelName> - parts the specified channel if you're already connected to it and closes that channel window
+			/exit 		     - exits the irc server and closes the program
+			
+			SPECIAL:
+				/log on - Starts logging all chat on the channel window where /log in is typed
+				/log off - stops logging the chat on the channel window where /log off is typed
+
+
+
+Special feature(still has a few bugs but works most of the time):
+	-Chat Logging
+		- Type "/log on" in ANY channel window entry box to enable chat logging
+                - But "/log on" will only log for the channel window you have typed it in, you must type it again to enable it individually for every channel window you want to log the chat on
+                - can log MULTIPLE CHANNEL WINDOWS at the same time.
+		- It will write all chat messages to a file which is of the format "#channelName-Log-(Year-Month-Day).txt"
+		- It will check if such a file already exists and append to it if thats the case
+		- Otherwise writes to a completely new file
+		- Type "/log off" to stop logging the chat at any time
+		- If you close the channel window or part it, the chat logging feature is automatically disabled
+
